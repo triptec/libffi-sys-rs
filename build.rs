@@ -149,6 +149,7 @@ fn generate_bindings(include_paths: IncludePaths) {
     builder.header(include_file.display().to_string())
         .derive_default(true)
         .blacklist_type("max_align_t")
+        .trust_clang_mangling(false)
         .generate()
         .expect("
         **********
